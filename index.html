@@ -1,0 +1,58 @@
+<!-- • Criar funções que realizem operações básicas 
+(soma, subtração, multiplicação, divisão). 
+• Implementar uma função que manipule arrays 
+(ex: filtrar números pares, calcular média). 
+• Usar arrow functions em pelo menos duas partes do código. 
+• Criar uma função que receba outra função como parâmetro (callback). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function soma(a, b){
+            return a + b;
+        }
+
+        function sub(a, b){
+            return a - b;
+        }
+
+        function mult(a, b){
+            return a * b;
+        }    
+
+        function div(a, b){
+            return a/b;
+        }
+
+        console.log("Soma:", soma(14, 7));
+        console.log("Subtração:", sub(10, 5));
+        console.log("Multiplicação:", mult(19, 3));
+        console.log("Divisão:", div(120, 6));
+
+        const par = function (numeros){
+            return numeros.filter(num => num % 2 ===0);
+        };
+
+        const lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log("Números pares: ", par(lista));
+
+        const media = (numeros) =>{
+            const soma = numeros.reduce((total, n)=> total + n, 0);
+            return soma / numeros.length;
+        }
+        
+        console.log("Média: ", media(lista));
+
+        function fazerOperacao(a, b, operacao){
+            console.log("Resultado operação callback: ", operacao(a, b));
+        }
+
+        fazerOperacao(8, 2, (x, y)=> x** y);
+    </script>
+</body>
+</html>
